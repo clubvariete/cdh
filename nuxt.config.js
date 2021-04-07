@@ -1,4 +1,5 @@
 const config = require('./.contentful.json')
+const env = require('dotenv').config()
 
 
 module.exports = {
@@ -23,6 +24,12 @@ module.exports = {
   /*
   ** Build configuration
   */
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+    },
   build: {
     /*
     ** Run ESLint on save
@@ -38,17 +45,4 @@ module.exports = {
       }
     }
   }
-}
-
-
-
-module.exports = {
-  // ...
-  env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
-  }
-  // ...
 }
